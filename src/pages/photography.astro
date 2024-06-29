@@ -1,0 +1,20 @@
+---
+import Layout from "../layouts/Layout.astro";
+import PhotographyCard from "../components/PhotographyCard.astro";
+import { readPhotos } from "../utils/readPhotos";
+
+// Read all photos from the 'photography' directory
+const photos = await readPhotos("photography");
+---
+
+<Layout title="Photography">
+  <main class="max-w-7xl mx-auto p-8">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold">Photography</h1>
+    </header>
+
+    <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
+      {photos.map((photo) => <PhotographyCard image={photo} />)}
+    </section>
+  </main>
+</Layout>
