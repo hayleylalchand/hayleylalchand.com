@@ -14,15 +14,38 @@ const { title } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    <link rel="stylesheet" href="/src/styles/global.css" />
     <title>{title}</title>
   </head>
   <body class="bg-white text-gray-900">
+    <header class="flex justify-between items-center py-8">
+      <h1 class="text-3xl font-bold">Hayley Lalchand</h1>
+      <nav>
+        <ul class="flex space-x-4">
+          <li><a href="/" class="text-gray-600 hover:underline">Home</a></li>
+          <li>
+            <a href="/reporting" class="text-gray-600 hover:underline"
+              >Reporting</a
+            >
+          </li>
+          <li>
+            <a href="/photography" class="text-gray-600 hover:underline"
+              >Photography</a
+            >
+          </li>
+          <li>
+            <a href="/contact" class="text-gray-600 hover:underline">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
     <slot />
+    <footer class="py-4 text-center text-gray-700">
+      <code>&lt;/&gt;</code> with &#9825; by <a
+        href="https://github.com/ryanlalchand"
+        class="text-blue-500 hover:underline">Ryan Lalchand</a
+      >
+      >
+    </footer>
   </body>
-  <footer class="py-4 text-center text-gray-700">
-    <code>&lt;/&gt;</code> with &#9825; by <a
-      href="https://github.com/ryanlalchand"
-      class="text-blue-500 hover:underline">Ryan Lalchand</a
-    >
-  </footer>
 </html>
