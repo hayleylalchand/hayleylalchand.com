@@ -2,6 +2,18 @@
 import Layout from "../layouts/Layout.astro";
 import ArticleCard from "../components/Card.astro";
 import articles from "../data/articles.json";
+import { fetchImage } from "../utils/fetchImage";
+
+// Fetch images for articles during build
+const articlesWithImages = await Promise.all(
+  articles.map(async (article) => {
+    const imageUrl = article.image || (await fetchImage(article.link));
+    return {
+      ...article,
+      image: imageUrl,
+    };
+  })
+);
 ---
 
 <Layout title="Reporting">
@@ -12,7 +24,7 @@ import articles from "../data/articles.json";
 
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
-        articles.map((article) => (
+        articlesWithImages.map((article) => (
           <ArticleCard
             title={article.title}
             image={article.image}
