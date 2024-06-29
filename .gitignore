@@ -20,6 +20,8 @@ pnpm-debug.log*
 # macOS-specific files
 .DS_Store
 
-
 # Million Lint
 .million
+
+# HUGE JPEGS
+/public/photography
