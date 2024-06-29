@@ -18,6 +18,10 @@ const articlesWithImages = await Promise.all(
 
 <Layout title="Reporting">
   <main class="max-w-7xl mx-auto p-8">
+    <header class="mb-8">
+      <h1 class="text-3xl font-bold">Selected Writing Samples</h1>
+    </header>
+
     <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
       {
         articlesWithImages.map((article) => (
@@ -25,6 +29,9 @@ const articlesWithImages = await Promise.all(
             title={article.title}
             image={article.image}
             link={article.link}
+            description={article.description}
+            source={article.source}
+            date={article.date}
           />
         ))
       }

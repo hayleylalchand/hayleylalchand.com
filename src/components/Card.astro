@@ -3,16 +3,29 @@ interface Props {
   title: string;
   image: string;
   link: string;
+  description?: string;
+  source?: string;
+  date?: string;
 }
 
-const { title, image, link } = Astro.props;
+const { title, image, link, description, source, date } = Astro.props;
 ---
 
-<article class="border rounded-lg shadow-lg overflow-hidden">
-  <a href={link} target="_blank" rel="noopener noreferrer">
-    {image && <img src={image} alt={title} class="w-full h-48 object-cover" />}
+<article class="border rounded-lg overflow-hidden shadow-lg">
+  <a href={link} target="_blank" rel="noopener noreferrer" class="block">
+    <img src={image} alt={title} class="w-full h-48 object-cover" />
     <div class="p-4">
-      <h3 class="text-xl font-semibold">{title}</h3>
+      <h3 class="text-xl font-semibold mb-2">{title}</h3>
+      {description && <p class="text-gray-700 mb-4">{description}</p>}
+      {
+        (source || date) && (
+          <div class="text-sm text-gray-500">
+            {source && <span>{source}</span>}
+            {source && date && <span> | </span>}
+            {date && <span>{date}</span>}
+          </div>
+        )
+      }
     </div>
   </a>
 </article>
