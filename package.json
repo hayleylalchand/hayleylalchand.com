@@ -5,10 +5,11 @@
     "astro": "^3.6.5",
     "cheerio": "^1.0.0-rc.12",
     "node-fetch": "^3.3.2",
+    "sharp": "^0.33.4",
     "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
-    "bun-types": "^1.1.17",
+    "bun-types": "^1.1.18",
     "eslint": "^8.57.0",
     "eslint-plugin-astro": "^0.29.1",
     "eslint-plugin-jsx-a11y": "^6.9.0",
@@ -21,9 +22,9 @@
     "typescript": "^5.5.2"
   },
   "scripts": {
-    "astro": "astro",
-    "build": "astro build",
-    "dev": "astro dev",
+    "compress-images": "bun run src/utils/compressImages.js",
+    "build": "bun run compress-images && astro build",
+    "dev": "bun run compress-images && astro dev",
     "preview": "astro preview",
     "start": "astro dev"
   },
