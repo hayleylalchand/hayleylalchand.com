@@ -7,13 +7,18 @@ const { image } = Astro.props;
 ---
 
 <div class="photography-card">
-  <img src={image} alt="Photography" class="w-full h-full object-cover" />
+  <img src={image} alt="Photography" class="w-full h-auto" />
 </div>
 
 <style>
   .photography-card {
     display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  img {
     width: 100%;
-    height: 100%;
+    height: auto;
   }
 </style>
