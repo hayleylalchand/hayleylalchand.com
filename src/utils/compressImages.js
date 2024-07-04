@@ -39,10 +39,6 @@ ensureDirExists(destDir);
         try {
           console.log(`Processing file: ${filePath}`);
           await sharp(filePath)
-            .resize(800, 600, {
-              fit: sharp.fit.inside,
-              withoutEnlargement: true,
-            })
             .toFormat("webp")
             .webp({ quality: 100 })
             .toFile(outputFilePath);
