@@ -44,7 +44,7 @@ ensureDirExists(destDir);
               withoutEnlargement: true,
             })
             .toFormat("webp")
-            .webp({ quality: 80 })
+            .webp({ quality: 100 })
             .toFile(outputFilePath);
 
           console.log(
