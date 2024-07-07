@@ -47,6 +47,9 @@ const links = [
   .social-icons a {
     color: #000;
     font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    height: 24px; /* Ensure height is set */
   }
 
   .social-icons a:hover {
@@ -59,5 +62,11 @@ const links = [
 
   .social-icons a[aria-label="MuckRack"]:hover {
     color: #1da1f2; /* MuckRack color */
+  }
+
+  .social-icons svg {
+    width: 24px;
+    height: 24px;
+    fill: currentColor; /* Ensure the fill color is set */
   }
 </style>
