@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/Layout.astro";
+import SocialIcons from "../components/SocialIcons.astro";
 ---
 
 <Layout title="Hayley Lalchand">
@@ -17,8 +18,10 @@ import Layout from "../layouts/Layout.astro";
           class="w-full h-full object-cover"
         />
         <caption
-          >Photo credit: <a href="https://nylerosenbaum.com" target="_blank"
-            >Nyle Rosenbaum</a
+          >Photo credit: <a
+            href="https://nylerosenbaum.com"
+            target="_blank"
+            class="text-blue-500 hover:underline">Nyle Rosenbaum</a
           ></caption
         >
       </div>
@@ -28,6 +31,9 @@ import Layout from "../layouts/Layout.astro";
       <p class="text-lg">
         I've worked with Farm and Dairy, Farm World, BioSpace, and more.
       </p>
+    </section>
+    <section class="mt-16">
+      <SocialIcons />
     </section>
   </main>
 </Layout>
