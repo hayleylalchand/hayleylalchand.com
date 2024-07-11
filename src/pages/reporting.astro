@@ -7,7 +7,9 @@ import { fetchImage } from "../utils/fetchImage";
 // Fetch images for articles during build
 const articlesWithImages = await Promise.all(
   articles.map(async (article) => {
-    const imageUrl = article.image || (await fetchImage(article.link));
+    const imageUrl =
+      (await fetchImage(article.link)) ||
+      "/photography-compressed/" + article.image;
     return {
       ...article,
       image: imageUrl,
