@@ -40,7 +40,7 @@ ensureDirExists(destDir);
           console.log(`Processing file: ${filePath}`);
           await sharp(filePath)
             .toFormat("webp")
-            .webp({ quality: 100 })
+            .webp({ quality: 80 })
             .toFile(outputFilePath);
 
           console.log(
