@@ -25,7 +25,7 @@ ensureDirExists(destDir);
     console.log("Reading files...");
     const files = fs
       .readdirSync(srcDir)
-      .filter((file) => /\.(jpg|jpeg|png)$/.test(file));
+      .filter((file) => /\.(jpg|jpeg|png|webp)$/.test(file));
     console.log(`Found ${files.length} files`);
 
     await Promise.all(
