@@ -22,9 +22,9 @@
     "typescript": "^5.5.2"
   },
   "scripts": {
-    "compress-images": "bun run src/utils/compressImages.js",
-    "build": "bun run compress-images && astro build",
-    "dev": "bun run compress-images && astro dev",
+    "compress-images": "npm run src/utils/compressImages.js",
+    "build": "npm run compress-images && astro build",
+    "dev": "npm run compress-images && astro dev",
     "preview": "astro preview"
   },
   "type": "module",
