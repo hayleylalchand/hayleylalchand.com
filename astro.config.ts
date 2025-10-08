@@ -8,4 +8,5 @@ const _plugins = [MillionLint.vite()];
 export default defineConfig({
   site: "https://hayleylalchand.com",
   integrations: [tailwind()],
+  outDir: "./docs",
 });
